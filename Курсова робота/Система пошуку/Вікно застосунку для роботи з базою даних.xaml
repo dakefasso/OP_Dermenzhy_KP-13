@@ -1,0 +1,54 @@
+﻿<Window x:Class="Лабораторна4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:Лабораторна4"
+        mc:Ignorable="d"
+        Title="Застосунок для роботи з базою даних" Height="560" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Label VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,15,0,0"
+               Content="SQL запит" FontSize="25" FontFamily="Century" FontWeight="Bold"></Label>
+        <Label VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,15,0,0" Grid.Column="1"
+               Content="Результат" FontSize="25" FontFamily="Century" FontWeight="Bold"></Label>
+
+        <ScrollViewer Margin="10, 70, 10, 130" HorizontalScrollBarVisibility="Auto">
+            <TextBox x:Name="queryTextBox" Padding="5" BorderBrush="#FF673AB7" BorderThickness="3"
+                     FontSize="16" FontFamily="Century" AcceptsReturn="True" TextWrapping="Wrap"></TextBox>
+        </ScrollViewer>
+
+        <ScrollViewer  Margin="10, 70, 10, 130" Grid.Column="1" HorizontalScrollBarVisibility="Auto">
+            <Grid x:Name="resultDataGrid"></Grid>
+        </ScrollViewer>
+
+        <Button x:Name="closeButton" VerticalAlignment="Bottom" HorizontalAlignment="Center"
+                Margin="0, 0, 0, 20" Width="250" Height="40" Grid.Column="1"
+            Content="Закрити застосунок" FontSize="20" FontFamily="Century" FontWeight="DemiBold"></Button>
+        <ComboBox x:Name="sampleQueryButton" VerticalAlignment="Bottom" 
+                Margin="0, 0, 0, 75" Height="40" Width="380" 
+                materialDesign:HintAssist.Hint="Типові запити"  
+                Padding="0, 10, 0, 0"
+                Style="{StaticResource MaterialDesignComboBox}"
+                FontSize="19" FontFamily="Century" FontWeight="DemiBold">
+            <ComboBoxItem Name="teamGamesItem" Content="Інформація про ігри певної команди"></ComboBoxItem>
+            <ComboBoxItem Name="playersInGameItem" Content="Інофрмація про гравців, що грали у певній грі"></ComboBoxItem>
+            <ComboBoxItem Name="ticketPriceGameItem" Content="Ціна квитка на певний матч"></ComboBoxItem>
+            <ComboBoxItem Name="playerScoredMostItem" Content="Гравець, що забив найбільше м'ячів"></ComboBoxItem>
+            <ComboBoxItem Name="teamsScoredConcededItem" Content="Команди з найкрощою різницею забитих та пропущених м'ячів"></ComboBoxItem>
+            <ComboBoxItem Name="youngestPlayerItem"  Content="Наймолодші гравці"></ComboBoxItem>
+            <ComboBoxItem Name="countryPlayersItem" Content="Гравці з певної країни"></ComboBoxItem>
+            <ComboBoxItem Name="championsTeamsItem" Content="Команди, що виходять до Ліги Чемпіонів"></ComboBoxItem>
+            <ComboBoxItem Name="mostProfitTeamItem" Content="Команда з найбільшим прибутком"></ComboBoxItem>
+        </ComboBox>
+
+        <Button x:Name="executeButton" VerticalAlignment="Bottom" HorizontalAlignment="Center"
+                Margin="0, 0, 0, 20" Width="250" Height="40"
+            Content="Виконати запит" FontSize="20" FontFamily="Century" FontWeight="DemiBold"></Button>
+    </Grid>
+</Window>
